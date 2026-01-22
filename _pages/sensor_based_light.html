@@ -237,9 +237,9 @@
 
 <html>
 <head>
-	<title>Leveraging Next-Active Objects for Context-Aware Anticipation in Egocentric Videos</title>
+	<title>Sensor based Lights</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="Leveraging Next-Active Objects for Context-Aware Anticipation in Egocentric Videos" />
+	<meta property="og:title" content="Sensor based Lights" />
 	<meta property="og:description" content="This is the paper desc" />
 
 	<!-- Get from Google Analytics -->
@@ -257,19 +257,19 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:34px">Leveraging Next-Active Objects for Context-Aware Anticipation in Egocentric Videos</span><br>
+		<span style="font-size:34px">Sensor based Lights</span><br>
 		<br>
 		<table align=center width=1000px>
 			<table align=center width=1000px>
 				<tr>
-					<td align=center width=150px>
+					<td align=center width=200px>
 						<center>
-							<span style="font-size:24px"><a href="https://sanketsans.github.io/about">Sanket Thakur</a></span>
+							<span style="font-size:24px"><a href="https://scholar.google.com/citations?user=oflxhQsAAAAJ&hl=it">Valentina Sanguineti</a></span>
 						</center>
 					</td>
 					<td align=center width=150px>
 						<center>
-							<span style="font-size:24px"><a href="https://cbeyan.github.io/">Cigdem Beyan</a></span>
+							<span style="font-size:24px"><a href="https://sanketsans.github.io/about">Sanket Thakur</a></span>
 						</center>
 					</td>
 					<td align=center width=150px>
@@ -279,32 +279,22 @@
 					</td>
 					<td align=center width=150px>
 						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.com/citations?user=yV3_PTkAAAAJ&hl=en">Vittorio Murino</a></span>
+							<span style="font-size:24px"><a href="https://scholar.google.com/citations?user=LUzvbGIAAAAJ&hl=en">Alessio Del Bue</a></span>
 						</center>
 					</td>
 					<td align=center width=150px>
 						<center>
-							<span style="font-size:24px"><a href="https://scholar.google.com/citations?user=LUzvbGIAAAAJ&hl=en">Alessio Del Bue</a></span>
+							<span style="font-size:24px"><a href="https://scholar.google.com/citations?user=yV3_PTkAAAAJ&hl=en">Vittorio Murino</a></span>
 						</center>
 					</td>
 				</tr>
 			</table>
 			<br>
-			<table align=center width=750px>
+			<table align=center width=250px>
 				<tr>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:24px"><a href='https://arxiv.org/abs/2308.08303'>[Paper]</a></span>
-						</center>
-					</td>
-					<td align=center width=300px>
-						<center>
-							<span style="font-size:24px"><a href='https://sanketsans.github.io/anticipating-next-active-object-egocentric.html'>[ANACTO Work]</a></span>
-						</center>
-					</td>
-					<td align=center width=300px>
-						<center>
-							<span style="font-size:24px"><a href='https://drive.google.com/file/d/120JC8vCyY47Xt84OA53PIv4Frf3-Kw89/view?usp=sharing'>[Poster]</a></span>
+							<span style="font-size:24px"><a href='https://ieeexplore.ieee.org/abstract/document/10095447'>[Paper]</a></span>
 						</center>
 					</td>
 					<td align=center width=300px>
@@ -322,16 +312,16 @@
 			<tr>
 				<td width=400px>
 					<center>
-						<img class="round" style="width:500px" src="/img/resources/wacv24/wacv_teaser.png"/>
+						<img class="round" style="width:500px" src="/img/resources/icassp/teaser.png"/>
 					</center>
 				</td>
 			</tr>
 		</table>
 		<br>
-		<!-- <table align=center width=850px>
+		<table align=center width=850px>
 			<tr>
 				<td>
-					Imagine a scene where originally there was a plane flying in the
+					<b>Fig 1.</b> Imagine a scene where originally there was a plane flying in the
 					sky and later the plane is removed. Probably, when we will inpaint
 					it, it will be completed with a visually consistent texture, but we
 					will miss the plane and the original semantic content in the scene.
@@ -342,7 +332,7 @@
 					semantic content of the sound as well as with the surrounding visual appearance.
 				</td>
 			</tr>
-		</table> -->
+		</table>
 	</center>
         <br>
 	<hr>
@@ -351,26 +341,30 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				Objects are crucial for understanding human-object interactions. 
-				By identifying the relevant objects, one can also predict potential future interactions or actions that may occur with these objects. 
-				In this paper, we study the problem of Short-Term Object interaction anticipation (STA) and propose NAOGAT (Next-Active-Object Guided Anticipation Transformer), 
-				a multi-modal end-to-end transformer network, that attends to objects in observed frames in order to anticipate the next-active-object (NAO) and, eventually, 
-				to guide the model to predict context-aware future actions.
-				The task is challenging since it requires anticipating future action along with the object with which the action occurs and the time after which the interaction will begin, 
-				a.k.a. the time to contact (TTC). Compared to existing video modeling architectures for action anticipation, NAOGAT captures the relationship between objects and 
-				the global scene context in order to predict detections for the next active object and anticipate relevant future actions given these detections, leveraging the objects' dynamics to improve accuracy. 
-				One of the key strengths of our approach, in fact, is its ability to exploit the motion dynamics of objects within a given clip
-				, which is often ignored by other models, and separately decoding the object-centric and motion-centric information. Through our experiments, we show that our model outperforms existing methods on two separate datasets, 
-				Ego4D and EpicKitchens-100 (``Unseen Set''), as measured by several additional metrics, such as time to contact, and next-active-object localization. 
+				We tackle audio-visual inpainting, the problem of completing an image in such a way to be consistent with the sound associated to the
+				scene. To this end, we propose a multimodal, audio-visual inpaint-
+				ing method (AVIN), and show how to leverage sound to reconstruct
+				semantically consistent images. AVIN is a 2-stage algorithm, which
+				first learns the scene semantics and reconstructs low resolution im-
+				ages based on a conditional probability distribution of pixels in the
+				space conditioned to audio, and then refines such result with a GAN-
+				based network to increase the resolution of the reconstructed image.
+				We show that AVIN is able to recover the original content, especially
+				in the hard cases where the missing area heavily degrades the scene
+				semantics: it can perform cross-modal generation whenever no vi-
+				sual context is observed at all, reconstructing visual data from sound
+				only. 
 			</td>
 		</tr>
 	</table>
 	<br>
 	<hr>
-	<!-- <center><h1>Talk</h1></center>
+	<center><h1>Talk</h1></center>
 	<p align="center">
 		<iframe src="https://drive.google.com/file/d/1GjQvSR9pKSYEKx4VjkGW1GkH_gsVO3Sv/preview" width="640" height="480" allow="autoplay"></iframe>
-	</p> -->
+	</p>
+
+	<hr>
 
 	<center><h1>Code</h1></center>
 
@@ -386,7 +380,7 @@
 		<tr>
 			<td align=center width=300px>
 				<center>
-					<td><img class="round" style="width:950px" src="/img/resources/wacv24/wacv23_method.png"/></td>
+					<td><img class="round" style="width:950px" src="/img/resources/icassp/model.png"/></td>
 				</center>
 			</td>
 			<!-- <td align=center width=100px>
@@ -401,10 +395,24 @@
 		<center>
 			<tr>
 				<td>
-					<b>Fig 2.</b> Our NAOGAT model first extracts feature information and object detections from a set of frames within an observed clip segment by means of a backbone network and an object detector; object detections are then transformed into object embeddings using an MLP network. The frame features are then concatenated with object embeddings to be sent to the transformer encoder after appending with spatial positional encoding. The encoder then extracts foreground motion (video memory) and global context features, which are used in two separate decoders to perform object-centric and motion-centric predictions. For object decoder, detections from the last observed frame and learnable embeddings are used to create object queries to perform fixed-set predictions for the NAO class label and its bounding box using a transformer decoder. In the last stage, we leverage Object dynamics to extract background motion in terms of object trajectories for detected objetcs in sampled frames. We then use the object decoder's outputs with the combined frame representation of video memory and object dynamics to perform predictions for motion-related outputs, such as future action and time to contact (TTC).
+					<b>Fig 2.</b> Our AVIN model works in two stages. <b>Stage I :</b> AudioPixelCNN takes a low resolution masked image as an input. The image is then conditioned 
+					upon the corresponding audio sample for the subject that is to be filled with in the missing region. This outputs a low-resolution representation of 
+					complete image filling the missing region with context information. This outputs is stochastic since the pixels are sampled from a probability distribution
+					to output a wide range of images. <b>Stage II: </b> In this stage, a ADSR-GAN model is used to refine the low-resolution image from stage I. The GAN takes the 
+					output from previous stage, high resolution masked image and also the corresponding audio sample to generate a high-resolution representation of the final image. 
+					The image is then fed to a discriminator to follow a min-max learning to better generate high-resolution images while keeping the visual semantics of the missing 
+					regions preserved. 
 				</td>
 			</tr>
 		</center>
+	</table>
+	<table align=center width=800px>
+		<br>
+		<tr><center>
+			<span style="font-size:28px">&nbsp;<a href="https://docs.google.com/presentation/d/e/2PACX-1vRaGSgpoghJe6jPUF6-WROC5cAr3w449We0r-ATHYOTBVytLM37jwM6kYSddC7gsw/pub?start=false&loop=false&delayms=3000">[Slides]</a>
+			<a href="https://drive.google.com/file/d/1EYdQFW2kBfwyrdCzpnYHYugPjc5-KDu9/view?usp=share_link">[Poster]</a>
+			</center>
+		</span> 
 	</table>
 	<br>
 	<hr>
@@ -413,28 +421,23 @@
 
 	<center>
 		<div class="slideshow-container">
-			<!-- <div class="mySlides fade">
+			<div class="mySlides fade">
 			  <div class="numbertext">1 / 3</div>
 			  <img src="/img/resources/icassp/suburmp.png" style="width:70%">
 			  <figcaption >Cross-Model Generation on <b><it>SubURMP</it></b></figcaption>
-			</div> -->
-			<div class="mySlides fade">
-			  <div class="numbertext">1 / 3</div>
-			  <iframe src="https://drive.google.com/file/d/1aIJypo8RkwKDKai3KQRpQuFMQp-45ktC/preview" width="640" height="480" allow="autoplay"></iframe>
-			  <figcaption>Model's Performance on <b>Video 1</b> based on past performance.</figcaption>
 			</div>
 			<div class="mySlides fade">
-				<div class="numbertext">2 / 3</div>
-				<iframe src="https://drive.google.com/file/d/1Fs5Tf1sKINQKcbKhi6zWgAiZZMf7yFy6/preview" width="640" height="480" allow="autoplay"></iframe>
-				<figcaption>Model's Performance on <b>Video 2</b> based on past performance.</figcaption>
+			  <div class="numbertext">2 / 3</div>
+			  <img src="/img/resources/icassp/audioset.png" style="width:100%">
+			  <figcaption>Cross-Model Generation on <b><it>AudioSet</it></b> </figcaption>
 			</div>
 			<div class="mySlides fade">
-				<div class="numbertext">3 / 3</div>
-				<iframe src="https://drive.google.com/file/d/1L-8ZObj8JJ3c5WEyKMEIpDkYxBbcAMNN/preview" width="640" height="480" allow="autoplay"></iframe>
-				<figcaption>Model's Performance on <b>Video 3</b> based on past performance.</figcaption>
-			  </div>
-			<!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			<a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+			  <div class="numbertext">3 / 3</div>
+			  <img src="/img/resources/icassp/vggsound.png" style="width:100%">
+			  <figcaption>Cross-Model Generation on <b><it>VGGSound</it></b></figcaption>
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
 		  </div>
 		  <br>
 		  <div style="text-align:center">
@@ -481,7 +484,7 @@
 				if(timeoutId) {
 					clearTimeout(timeoutId);
 				}
-				timeoutId = setTimeout(showSlides, 100000); // Change image every 5 seconds
+				timeoutId = setTimeout(showSlides, 7000); // Change image every 5 seconds
 			}
 		</script>
 	<br>
@@ -489,17 +492,13 @@
 	<table align=center width=450px>
 		<center><h1>Paper and Supplementary Material</h1></center>
 		<tr>
-			<td><a href=""><img class="layered-paper-big" style="height:175px" src="/img/resources/wacv24/paper.png"/></a></td>
-			<td><span style="font-size:14pt">S. Thakur, C. Beyan, P. Morerio, A. Del Bue, V. Murino, <br>
-				<b>Leveraging Next-Active Objects for Context-Aware Anticipation in Egocentric Videos</b><br>
-				In Winter Conference on Applications of Computer Vision (WACV), 2023<br>
-				(hosted on <a href="https://arxiv.org/abs/2308.08303">arxiv</a>)<br>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="/img/resources/icassp/paper.png"/></a></td>
+			<td><span style="font-size:14pt">V. Sanguineti, S. Thakur, P. Morerio, A. Del Bue, V. Murino, <br>
+				<b>Audio-Visual Inpainting: Reconstructing Missing Visual Information with Sound</b><br>
+				In International Conference on Acoustics, Speech, and Signal Processing, 2023<br>
+				(hosted on <a href="https://ieeexplore.ieee.org/abstract/document/10095447">IEEE</a>)<br>
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:12pt"><a href=""><br></a>
-					Mail:  <a href="mailto:sanket.thakur@iit.it">sanket.thakur@iit.it</a> for access to the next-active-object data for EK-100 for last observed frame. 
-					If using the dataset, also cite our <a href="https://sanketsans.github.io/anticipating-next-active-object-egocentric.html">ANACTO</a> work <a href="/img/resources/nao_journal/bibtex.txt">[ANACTO BIBTEX]</a>
-
-				</span>
 				</span>
 			</td>
 		</tr>
@@ -509,7 +508,7 @@
 	<table align=center width=600px>
 		<tr>
 			<td><span style="font-size:14pt"><center>
-				<a href="/img/resources/wacv24/bibtex.txt">[Bibtex]</a>
+				<a href="/img/resources/icassp/bibtex.txt">[Bibtex]</a>
 			</center></td>
 		</tr>
 	</table>

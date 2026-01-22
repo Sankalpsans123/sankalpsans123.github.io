@@ -1,17 +1,20 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-# Use standalone Jekyll 4.x for Ruby 3.3 compatibility
-gem 'jekyll', '~> 4.3'
+# Core Jekyll (modern, Ruby 3.3 compatible)
+gem "jekyll", "~> 4.3"
 
 group :jekyll_plugins do
-  gem 'jekyll-paginate'
-  gem 'jekyll-sitemap'
+  gem "jekyll-paginate"
+  gem "jekyll-sitemap"
   gem "jekyll-github-metadata"
   gem "jekyll-octicons"
   gem "jemoji"
 end
 
-# Required for Ruby 3.3 + Jekyll 4
+# Ruby 3.3 stdlib gems (needed explicitly now)
+gem "webrick"
 gem "bigdecimal"
 gem "csv"
-gem "webrick"
+gem "base64"
+gem "logger"
+gem "uri"
