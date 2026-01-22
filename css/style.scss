@@ -1,0 +1,45 @@
+---
+---
+@import "variables";
+@import "_reset";
+@import "_mixins";
+@import "_basic";
+@import "_includes/_header";
+@import "_includes/_footer";
+@import "_includes/_content";
+@import "_includes/_socials";
+@import "_includes/_syntax";
+@import "_includes/_blog";
+@import"_includes/_comments";
+
+#gh-comments-list a.user,
+#gh-comments-list a.comment-url {
+  text-decoration: none !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
+}
+
+#gh-comments-list a:link,
+#gh-comments-list a:visited {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  background: white;
+
+  /* "to left" / "to right" - affects initial color */
+  background: linear-gradient(to left, white 50%, black 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+}
+
+#gh-comments-list a:hover,
+#gh-comments-list a:active {
+  background-position: left;
+  /* background-color: #555; */
+  color: white;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}

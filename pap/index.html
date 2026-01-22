@@ -1,0 +1,83 @@
+---
+layout: default
+title: Papers Breif
+subtitle: /pap/
+description: PhD candidate, Computer Vision. Gamer.
+---
+
+<section class="intro">
+
+	<div class="wrap">
+
+		<h1>{{ page.title }}</h1>
+		<p>{{ page.subtitle }}</p>
+
+	</div>
+
+</section>
+
+<div class="wrap">
+
+		<div class="portfolio-item" style="margin-left:3%; margin-right:15%">
+			<h2 style="display: inline-block" >Spotify Pod</h2>
+			<h2 style="display: inline-block; background-color:#000000; color:#FFFFFF">cast :</h2><br>
+			<!-- <h2> Spotify Pod</h2> <h2 background-color:powderblue;> cast : </h2> -->
+			<iframe src="https://open.spotify.com/embed/show/7bnalsMIGlbmQYZtqrf36d?t=0" width="100%" height="55%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+			If you are interested in talking to me about your research, hit me up and lets make another interesting <b>podcast</b>.
+
+			<div style="margin-top:0%">
+					<p style="margin-top:5%; margin-left:5%" ><b>I will be adding more on a regular basis. </b></p>
+					<div style="float:left; margin-left:5%; width:3%; height:3%"><img src="/img/claim_sign.png" alt="claim_sign" ></div>
+					<div style="float:left; margin-left:1%">This claim is disputed.</div>
+					<div style="clear: left;"/>
+			</div>
+
+		</div>
+		<section class="portfolio">
+		{% for post in site.posts %}
+
+		<div class="portfolio-item" style="margin-left:5%">
+
+			<a class="portfolio-item__link" href="{{ post.url }}">
+
+				<div class="portfolio-item__image" style="background-image: url({{ post.featured_image  }});"></div>
+
+				<div class="portfolio-item__content">
+					<div class="portfolio-item__info" >
+						<!-- style="margin-top:1%"> -->
+						<h2 class="portfolio-item__title">{{ post.title }}</h2>
+						<p class="portfolio-item__subtitle">{{ post.subtitle }}
+							<br>{% if post.reviewed_by %}
+								Reviewed By :<b> {{ post.reviewed_by}} </b>
+									{% endif %}
+						</p>
+
+						{% for tag in post.tags %}
+						  {% assign tag_slug = tag | slugify: "raw" %}
+						  <a class="tag-link"
+						    href={{ site.baseurl | append: "/tags/" | append: tag_slug | append: "/" }}
+						    rel="category tag" style="margin-left:2%">
+						    #{{ tag }}
+						  </a>
+						{% endfor %}
+					</div>
+				</div>
+
+			</a>
+
+		</div>
+
+		{% endfor %}
+
+
+	</div>
+
+	<!-- <div style="margin-top:10%">
+			<p style="margin-top:5%; margin-left:5%" ><b>I will be adding more on a regular basis. </b></p>
+			<div style="float:left; margin-left:5%; width:3%; height:3%"><img src="/img/claim_sign.png" alt="claim_sign" ></div>
+			<div style="float:left; margin-left:1%">This claim is disputed.</div>
+			<div style="clear: left;"/>
+	</div> -->
+
+</section>
