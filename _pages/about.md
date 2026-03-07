@@ -18,14 +18,31 @@ Passionate about **#Hardware***, **#Coding*** & **#Anime**
 
 ##### Projects:
 
-***Project I : Sensor based lights** <br>
-    [<span style="color: #249eda;">Project Page</span>](/sensor-based-light),
-    [<span style="color: #249eda;">Code</span>](https://gist.github.com/Sankalpsans123/7fcc30a148d50471cd7b6823ea07b547),
-    <!-- [<span style="color: #249eda;">Project Page</span>](anticipating-next-active-object-egocentric.html), [<span style="color: #6cc644;">Paper</span>](https://arxiv.org/abs/2302.06358) -->
+<div class="project-panels">
+  <div class="project-panel">
+    <img src="/img/sensor_lights/motion-sensor.png" alt="Sensor based light project" class="project-panel__image">
+    <div class="project-panel__body">
+      <h4>Sensor Based Light</h4>
+      <p>Raspberry Pi automation project using a PIR sensor to detect motion and switch room lights on or off automatically.</p>
+      <div class="project-panel__links">
+        <a href="/sensor-based-light" class="button button--light">Project Page</a>
+        <a href="https://gist.github.com/Sankalpsans123/7fcc30a148d50471cd7b6823ea07b547" class="button button--light">Code</a>
+      </div>
+    </div>
+  </div>
 
-***Project II : Plant GPT** <br>
-    [<span style="color: #249eda;">Project Page</span>](/plant-gpt),
-    [<span style="color: #249eda;">Code</span>](https://gist.github.com/Sankalpsans123/7abfd9320ea857810e3093245427091f),
+  <div class="project-panel">
+    <img src="/img/plant_gpt/chip.png" alt="Plant GPT project" class="project-panel__image">
+    <div class="project-panel__body">
+      <h4>Plant GPT</h4>
+      <p>Raspberry Pi plant assistant that reads soil moisture and alerts the user when the plant needs watering.</p>
+      <div class="project-panel__links">
+        <a href="/plant-gpt" class="button button--light">Project Page</a>
+        <a href="https://gist.github.com/Sankalpsans123/7abfd9320ea857810e3093245427091f" class="button button--light">Code</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 ---------

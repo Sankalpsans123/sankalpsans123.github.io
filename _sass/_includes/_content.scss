@@ -51,6 +51,58 @@
 	border-radius: 12px;
 }
 
+.project-panels {
+	display: grid;
+	gap: 1.5rem;
+	margin: 1.5rem auto 0;
+	max-width: 45rem;
+
+	@include mq(tabletp) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.project-panel {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	border-radius: 16px;
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01));
+	box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.project-panel__image {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	background: #f4f4f4;
+}
+
+.project-panel__body {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	padding: 1.1rem 1.1rem 1.25rem;
+}
+
+.project-panel__body h4 {
+	margin-top: 0;
+}
+
+.project-panel__body p {
+	margin-top: 0.6rem;
+	max-width: none;
+}
+
+.project-panel__links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
 .single {
 	margin-top: 0;
 	padding: 1.5rem 1rem;
