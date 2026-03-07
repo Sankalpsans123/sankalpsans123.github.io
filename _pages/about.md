@@ -23,6 +23,10 @@ Passionate about **#Hardware***, **#Coding*** & **#Anime**
     [<span style="color: #249eda;">Code</span>](https://gist.github.com/Sankalpsans123/7fcc30a148d50471cd7b6823ea07b547),
     <!-- [<span style="color: #249eda;">Project Page</span>](anticipating-next-active-object-egocentric.html), [<span style="color: #6cc644;">Paper</span>](https://arxiv.org/abs/2302.06358) -->
 
+***Project II : Plant GPT** <br>
+    [<span style="color: #249eda;">Project Page</span>](/plant-gpt),
+    [<span style="color: #249eda;">Code</span>](https://gist.github.com/Sankalpsans123/7abfd9320ea857810e3093245427091f),
+
 
 ---------
 

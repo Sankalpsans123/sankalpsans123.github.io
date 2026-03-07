@@ -4,8 +4,7 @@ title: Sensor Based Light
 subtitle: Personal Raspberry Pi automation project
 description: A personal home-automation project using Raspberry Pi and a PIR sensor to detect motion and switch room lights on or off automatically.
 permalink: /sensor-based-light
-<!-- header_image: /img/sankalp.jpg -->
-header_image: /img/sensor_lights/motion-sensor.png
+featured_image: /img/sensor_lights/motion-sensor.png
 ---
 
 <div style="display:grid; gap:2rem;">
@@ -67,13 +66,13 @@ header_image: /img/sensor_lights/motion-sensor.png
       </button>
       <div id="sensor-gallery" style="display:flex; gap:1rem; overflow-x:auto; scroll-behavior:smooth; padding-bottom:0.5rem; scrollbar-width:thin;">
         <figure style="margin:0; flex:0 0 min(80vw, 320px);">
-          <img src="/img/sensor_lights/IMG_20251219_171157.jpg" alt="Sensor based light project setup view one" style="width:100%; border-radius:10px;">
+          <img src="/img/sensor_lights/IMG_20251219_171157.jpg" alt="Sensor based light project setup view one" onclick="openSensorLightbox(this)" style="width:100%; border-radius:10px; cursor:zoom-in;">
         </figure>
         <figure style="margin:0; flex:0 0 min(80vw, 320px);">
-          <img src="/img/sensor_lights/IMG_20251219_171218.jpg" alt="Sensor based light project setup view two" style="width:100%; border-radius:10px;">
+          <img src="/img/sensor_lights/IMG_20251219_171218.jpg" alt="Sensor based light project setup view two" onclick="openSensorLightbox(this)" style="width:100%; border-radius:10px; cursor:zoom-in;">
         </figure>
         <figure style="margin:0; flex:0 0 min(80vw, 320px);">
-          <img src="/img/sensor_lights/IMG_20251219_171235.jpg" alt="Sensor based light project setup view three" style="width:100%; border-radius:10px;">
+          <img src="/img/sensor_lights/IMG_20251219_171235.jpg" alt="Sensor based light project setup view three" onclick="openSensorLightbox(this)" style="width:100%; border-radius:10px; cursor:zoom-in;">
         </figure>
       </div>
       <button type="button" onclick="scrollSensorGallery(1)" aria-label="Scroll gallery right" style="flex:0 0 auto; width:44px; height:44px; border:none; border-radius:999px; background:#111; color:#fff; font-size:1.5rem; cursor:pointer;">
@@ -84,10 +83,14 @@ header_image: /img/sensor_lights/motion-sensor.png
 
   <div>
     <h3>Demo Video</h3>
-    <video controls preload="metadata" style="width:100%; max-width:800px; border-radius:12px;">
-      <source src="/img/sensor_lights/VID_20251219_171314.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <iframe
+      src="https://drive.google.com/file/d/1FxRq5AxEm2UD1-QFIFZnweiynWc2wiRW/preview"
+      width="800"
+      height="450"
+      allow="autoplay"
+      allowfullscreen
+      style="width:100%; max-width:800px; border:none; border-radius:12px;">
+    </iframe>
   </div>
 
   <div>
@@ -114,6 +117,13 @@ header_image: /img/sensor_lights/motion-sensor.png
   </div>
 </div>
 
+<div id="sensor-lightbox" onclick="closeSensorLightbox(event)" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.75); overflow:auto; padding:2rem;">
+  <button type="button" onclick="closeSensorLightbox()" aria-label="Close full screen image" style="position:fixed; top:1rem; right:1rem; width:44px; height:44px; border:none; border-radius:999px; background:#fff; color:#111; font-size:1.5rem; cursor:pointer;">
+    &times;
+  </button>
+  <img id="sensor-lightbox-image" src="" alt="" style="display:block; width:auto; height:auto; max-width:512px; max-height:512px; margin:3rem auto 1rem;">
+</div>
+
 <script>
   function scrollSensorGallery(direction) {
     const gallery = document.getElementById("sensor-gallery");
@@ -121,4 +131,28 @@ header_image: /img/sensor_lights/motion-sensor.png
     const amount = Math.min(gallery.clientWidth * 0.9, 360);
     gallery.scrollBy({ left: direction * amount, behavior: "smooth" });
   }
+
+  function openSensorLightbox(image) {
+    const lightbox = document.getElementById("sensor-lightbox");
+    const lightboxImage = document.getElementById("sensor-lightbox-image");
+    if (!lightbox || !lightboxImage) return;
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeSensorLightbox(event) {
+    const lightbox = document.getElementById("sensor-lightbox");
+    const lightboxImage = document.getElementById("sensor-lightbox-image");
+    if (!lightbox || !lightboxImage) return;
+    if (event && event.target !== lightbox) return;
+    lightbox.style.display = "none";
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") closeSensorLightbox();
+  });
 </script>

@@ -28,6 +28,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Videos 
+*.mp4
+
 # Temporary files
 *.tmp
 *.temp

@@ -16,7 +16,7 @@ description: Student. Developer.
 
 			{% if post.featured_image %}
 			  {% if post.medium_url %}
-				<a href="{{ post.medium_url }}" target="_blank" rel="noopener noreferrer" class="blog-post__image" style="background-image: url({{ post.featured_image }});">
+				<a href="{{ post.medium_url }}" class="blog-post__image" style="background-image: url({{ post.featured_image }});">
 				  <span class="blog-post__image-overlay"></span>
 				  <span class="blog-post__image-copy">
 					<span class="blog-post__title">{{ post.title }}</span>
@@ -36,7 +36,7 @@ description: Student. Developer.
 			  <div class="blog-post__header">
 				{% if post.medium_url %}
 				  <h2 class="blog-post__title">
-					<a href="{{ post.medium_url }}" target="_blank" rel="noopener noreferrer">{{ post.title }}</a>
+					<a href="{{ post.medium_url }}">{{ post.title }}</a>
 				  </h2>
 				  <p class="blog-post__subtitle">{{ post.date | date_to_long_string }}</p>
 				{% else %}
@@ -57,7 +57,7 @@ description: Student. Developer.
 				{% endif %}
 			  </p>
 			  {% if post.medium_url %}
-				<p><a href="{{ post.medium_url }}" target="_blank" rel="noopener noreferrer" class="button">Read More</a></p>
+				<p><a href="{{ post.medium_url }}" class="button">Read More</a></p>
 			  {% else %}
 				<p><a href="{{ post.url }}" class="button">Read More</a></p>
 			  {% endif %}

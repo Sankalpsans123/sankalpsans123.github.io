@@ -1,0 +1,155 @@
+---
+layout: page
+title: Plant GPT
+subtitle: Personal Raspberry Pi plant monitoring project
+description: A personal Raspberry Pi project that monitors soil moisture and alerts the user when a plant needs water.
+permalink: /plant-gpt
+featured_image: /img/plant_gpt/chip.png
+---
+
+<div style="display:grid; gap:2rem;">
+  <div>
+    <p>
+      Plant GPT is a personal Raspberry Pi project I built to monitor soil moisture and help users know when a plant needs watering.
+      It uses a moisture sensor placed in the soil, reads the sensor values through a Raspberry Pi, and responds with alerts or recommendations when the soil becomes too dry.
+    </p>
+    <p>
+      The goal of the project was to build a simple smart-plant assistant that combines sensing, automation, and user-facing feedback.
+      It gave me practical experience in sensor calibration, hardware-software integration, and turning raw sensor data into useful messages for day-to-day use.
+    </p>
+  </div>
+
+  <div>
+    <h3>What It Does</h3>
+    <ul>
+      <li>Measures moisture level in the soil using a moisture sensor.</li>
+      <li>Checks whether the plant has enough water.</li>
+      <li>Sends alerts or responses asking the user to water the plant when the soil is dry.</li>
+      <li>Helps reduce guesswork in plant care with direct sensor-based feedback.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Hardware Used</h3>
+    <ul>
+      <li>Raspberry Pi</li>
+      <li>Soil moisture sensor</li>
+      <li>Power supply and jumper wiring</li>
+      <li>Plant pot / soil test setup</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>How I Built It</h3>
+    <p>
+      The Raspberry Pi reads moisture values from the soil sensor and compares them against a threshold to decide whether the plant is sufficiently watered.
+      When the value drops below the desired moisture level, the system generates a message or alert asking the user to water the plant.
+    </p>
+    <p>
+      I focused on making the output understandable instead of showing only raw numbers, which makes the project feel more like a helpful plant assistant.
+      The setup can be extended later with logging, scheduled checks, web notifications, or support for multiple plants.
+    </p>
+  </div>
+
+  <div>
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Experience working with Raspberry Pi sensor input for real-world monitoring.</li>
+      <li>Practical understanding of moisture sensing and threshold-based decision logic.</li>
+      <li>Improved skills in designing user-friendly hardware alerts.</li>
+      <li>A useful foundation for more advanced smart-garden automation projects.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Project Gallery</h3>
+    <div style="display:flex; align-items:center; gap:0.75rem; margin-top:1rem;">
+      <button type="button" onclick="scrollPlantGallery(-1)" aria-label="Scroll gallery left" style="flex:0 0 auto; width:44px; height:44px; border:none; border-radius:999px; background:#111; color:#fff; font-size:1.5rem; cursor:pointer;">
+        &#8249;
+      </button>
+      <div id="plant-gallery" style="display:flex; gap:1rem; overflow-x:auto; scroll-behavior:smooth; padding-bottom:0.5rem; scrollbar-width:thin;">
+        <figure style="margin:0; flex:0 0 min(80vw, 320px);">
+          <img src="/img/plant_gpt/IMG_20250619_191730.jpg" alt="Plant GPT project setup view one" onclick="openPlantLightbox(this)" style="width:100%; border-radius:10px; cursor:zoom-in;">
+        </figure>
+        <figure style="margin:0; flex:0 0 min(80vw, 320px);">
+          <img src="/img/plant_gpt/IMG_20250619_191742.jpg" alt="Plant GPT project setup view two" onclick="openPlantLightbox(this)" style="width:100%; border-radius:10px; cursor:zoom-in;">
+        </figure>
+        <figure style="margin:0; flex:0 0 min(80vw, 320px);">
+          <img src="/img/plant_gpt/IMG_20250619_191744.jpg" alt="Plant GPT project setup view three" onclick="openPlantLightbox(this)" style="width:100%; border-radius:10px; cursor:zoom-in;">
+        </figure>
+      </div>
+      <button type="button" onclick="scrollPlantGallery(1)" aria-label="Scroll gallery right" style="flex:0 0 auto; width:44px; height:44px; border:none; border-radius:999px; background:#111; color:#fff; font-size:1.5rem; cursor:pointer;">
+        &#8250;
+      </button>
+    </div>
+  </div>
+
+  <div>
+    <h3>Demo Video</h3>
+    <iframe
+      src="https://drive.google.com/file/d/1wbhQqKo8sVgyVolDCNcDFoe87DsyDfi3/preview"
+      width="800"
+      height="450"
+      allow="autoplay"
+      allowfullscreen
+      style="width:100%; max-width:800px; border:none; border-radius:12px;">
+    </iframe>
+  </div>
+
+  <div>
+    <h3>Code</h3>
+    <p>
+      The project code is available here:
+      <a href="https://gist.github.com/Sankalpsans123/7abfd9320ea857810e3093245427091f">Plant GPT Gist</a>
+    </p>
+  </div>
+
+  <div>
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add long-term moisture logging and watering history.</li>
+      <li>Send notifications through a phone or web dashboard.</li>
+      <li>Support multiple plants with individual thresholds.</li>
+    </ul>
+  </div>
+</div>
+
+<div id="plant-lightbox" onclick="closePlantLightbox(event)" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.75); overflow:auto; padding:2rem;">
+  <button type="button" onclick="closePlantLightbox()" aria-label="Close full screen image" style="position:fixed; top:1rem; right:1rem; width:44px; height:44px; border:none; border-radius:999px; background:#fff; color:#111; font-size:1.5rem; cursor:pointer;">
+    &times;
+  </button>
+  <img id="plant-lightbox-image" src="" alt="" style="display:block; width:auto; height:auto; max-width:512px; max-height:512px; margin:3rem auto 1rem;">
+</div>
+
+<script>
+  function scrollPlantGallery(direction) {
+    const gallery = document.getElementById("plant-gallery");
+    if (!gallery) return;
+    const amount = Math.min(gallery.clientWidth * 0.9, 360);
+    gallery.scrollBy({ left: direction * amount, behavior: "smooth" });
+  }
+
+  function openPlantLightbox(image) {
+    const lightbox = document.getElementById("plant-lightbox");
+    const lightboxImage = document.getElementById("plant-lightbox-image");
+    if (!lightbox || !lightboxImage) return;
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+
+  function closePlantLightbox(event) {
+    const lightbox = document.getElementById("plant-lightbox");
+    const lightboxImage = document.getElementById("plant-lightbox-image");
+    if (!lightbox || !lightboxImage) return;
+    if (event && event.target !== lightbox) return;
+    lightbox.style.display = "none";
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") closePlantLightbox();
+  });
+</script>
