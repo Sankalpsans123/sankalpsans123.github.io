@@ -1,0 +1,153 @@
+---
+layout: page
+title: Smart RC Car
+subtitle: Personal Raspberry Pi robotics project
+description: A personal Raspberry Pi powered RC car using an L298N motor driver and HC-SR04 based collision prevention logic.
+permalink: /smart-rc-car
+featured_image: /img/RC-car/technology.png
+---
+
+<div style="display:grid; gap:2rem;">
+  <div>
+    <p>
+      This project is a personal smart RC car build powered by a Raspberry Pi, an L298N motor driver, and an external 9V power supply.
+      I designed it to drive the motors electronically while using an HC-SR04 ultrasonic sensor for object detection and an override protocol to prevent collisions.
+    </p>
+    <p>
+      The main idea was to combine basic robotic mobility with a simple safety layer. Instead of allowing direct motor movement all the time, the car checks the distance to nearby objects and can override a user movement command when an obstacle is too close.
+    </p>
+  </div>
+
+  <div>
+    <h3>What It Does</h3>
+    <ul>
+      <li>Uses a Raspberry Pi as the main controller.</li>
+      <li>Drives the DC motors through an L298N motor driver.</li>
+      <li>Uses an external 9V supply for motor power.</li>
+      <li>Measures front distance using an HC-SR04 ultrasonic sensor.</li>
+      <li>Overrides forward movement when a collision risk is detected.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Hardware Used</h3>
+    <ul>
+      <li>Raspberry Pi</li>
+      <li>L298N motor driver</li>
+      <li>DC motors and RC car chassis</li>
+      <li>HC-SR04 ultrasonic sensor</li>
+      <li>External 9V power supply</li>
+      <li>Jumper wires and support electronics</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>How I Built It</h3>
+    <p>
+      The Raspberry Pi sends direction signals to the L298N motor driver, which controls the left and right drive motors.
+      The HC-SR04 continuously measures the distance in front of the car and feeds that information back to the control logic.
+    </p>
+    <p>
+      I added an override protocol so the car does not blindly follow motion commands. When the sensor detects that an object is too close, the software can stop or block the movement command to prevent the car from colliding with obstacles.
+    </p>
+  </div>
+
+  <div>
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Hands-on experience with Raspberry Pi motor control and robotics wiring.</li>
+      <li>Practical use of an ultrasonic sensor for distance-based safety decisions.</li>
+      <li>Understanding of how hardware override logic improves robotic reliability.</li>
+      <li>A strong base for adding autonomous navigation features later.</li>
+    </ul>
+  </div>
+
+  <div>
+    <h3>Project Gallery</h3>
+    <div style="display:flex; align-items:center; gap:0.75rem; margin-top:1rem;">
+      <button type="button" onclick="scrollRcGallery(-1)" aria-label="Scroll gallery left" style="flex:0 0 auto; width:44px; height:44px; border:none; border-radius:999px; background:#111; color:#fff; font-size:1.5rem; cursor:pointer;">
+        &#8249;
+      </button>
+      <div id="rc-gallery" style="display:flex; gap:1rem; overflow-x:auto; scroll-behavior:smooth; padding-bottom:0.5rem; scrollbar-width:thin;">
+        <figure style="margin:0; flex:0 0 min(80vw, 320px);">
+          <img src="/img/RC-car/1772901780701.jpg" alt="Smart RC car project setup view one" onclick="openRcLightbox(this)" style="width:100%; border-radius:10px; cursor:zoom-in;">
+        </figure>
+        <figure style="margin:0; flex:0 0 min(80vw, 320px);">
+          <img src="/img/RC-car/1772901780716.jpg" alt="Smart RC car project setup view two" onclick="openRcLightbox(this)" style="width:100%; border-radius:10px; cursor:zoom-in;">
+        </figure>
+      </div>
+      <button type="button" onclick="scrollRcGallery(1)" aria-label="Scroll gallery right" style="flex:0 0 auto; width:44px; height:44px; border:none; border-radius:999px; background:#111; color:#fff; font-size:1.5rem; cursor:pointer;">
+        &#8250;
+      </button>
+    </div>
+  </div>
+
+  <div>
+    <h3>Demo Video</h3>
+    <iframe
+      src="https://drive.google.com/file/d/1m2khfC5Jwr6gahdC_pJHq8bCI_kC62_b/preview"
+      width="800"
+      height="450"
+      allow="autoplay"
+      allowfullscreen
+      style="width:100%; max-width:800px; border:none; border-radius:12px;">
+    </iframe>
+  </div>
+
+  <div>
+    <h3>Code</h3>
+    <p>
+      The project code is available here:
+      <a href="https://gist.github.com/Sankalpsans123/65c81245868271ce03e0735dca694eb7">Smart RC Car Gist</a>
+    </p>
+  </div>
+
+  <div>
+    <h3>Future Improvements</h3>
+    <ul>
+      <li>Add wireless control through a mobile or web interface.</li>
+      <li>Use more than one distance sensor for better obstacle coverage.</li>
+      <li>Extend the override logic into semi-autonomous navigation.</li>
+    </ul>
+  </div>
+</div>
+
+<div id="rc-lightbox" onclick="closeRcLightbox(event)" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.75); overflow:auto; padding:2rem;">
+  <button type="button" onclick="closeRcLightbox()" aria-label="Close full screen image" style="position:fixed; top:1rem; right:1rem; width:44px; height:44px; border:none; border-radius:999px; background:#fff; color:#111; font-size:1.5rem; cursor:pointer;">
+    &times;
+  </button>
+  <img id="rc-lightbox-image" src="" alt="" style="display:block; width:auto; height:auto; max-width:512px; max-height:512px; margin:3rem auto 1rem;">
+</div>
+
+<script>
+  function scrollRcGallery(direction) {
+    const gallery = document.getElementById("rc-gallery");
+    if (!gallery) return;
+    const amount = Math.min(gallery.clientWidth * 0.9, 360);
+    gallery.scrollBy({ left: direction * amount, behavior: "smooth" });
+  }
+
+  function openRcLightbox(image) {
+    const lightbox = document.getElementById("rc-lightbox");
+    const lightboxImage = document.getElementById("rc-lightbox-image");
+    if (!lightbox || !lightboxImage) return;
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.style.display = "block";
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeRcLightbox(event) {
+    const lightbox = document.getElementById("rc-lightbox");
+    const lightboxImage = document.getElementById("rc-lightbox-image");
+    if (!lightbox || !lightboxImage) return;
+    if (event && event.target !== lightbox) return;
+    lightbox.style.display = "none";
+    lightboxImage.src = "";
+    document.body.style.overflow = "";
+  }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") closeRcLightbox();
+  });
+</script>

@@ -42,13 +42,25 @@ Passionate about **#Hardware***, **#Coding*** & **#Anime**
       </div>
     </div>
   </div>
+
+  <div class="project-panel">
+    <img src="/img/RC-car/technology.png" alt="Smart RC car project" class="project-panel__image">
+    <div class="project-panel__body">
+      <h4>Smart RC Car</h4>
+      <p class="project-panel__description">Raspberry Pi RC car using an L298N driver and HC-SR04 obstacle detection with collision prevention override logic.</p>
+      <div class="project-panel__links">
+        <a href="/smart-rc-car" class="button button--light">Project Page</a>
+        <a href="https://gist.github.com/Sankalpsans123/65c81245868271ce03e0735dca694eb7" class="button button--light">Code</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 ---------
 
 <!-- You can find me on [Twitter](https://twitter.com/sanketsans97).   -->
-If you're oldfashioned you can [send me an email](mailto:sankalpth0205@gmail.com)
+If you want to contant me [send me an email](mailto:sankalpth0205@gmail.com)
 
 **PS: I am still updating this site, few commits a day.**
  <!-- width="2%" height="2%" -->
