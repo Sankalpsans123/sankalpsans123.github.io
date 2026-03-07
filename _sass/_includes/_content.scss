@@ -23,6 +23,30 @@
 	}
 }
 
+.page-intro--with-image {
+	display: grid;
+	gap: 1.5rem;
+	align-items: center;
+
+	@include mq(tabletp) {
+		grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+	}
+}
+
+.page-intro__media {
+	order: 1;
+}
+
+.page-intro__copy {
+	order: 2;
+}
+
+.page-intro__image {
+	display: block;
+	width: 100%;
+	border-radius: 12px;
+}
+
 .single {
 	margin-top: 0;
 	padding: 1.5rem 1rem;

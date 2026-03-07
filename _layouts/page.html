@@ -3,9 +3,16 @@ layout: default
 ---
 
 <section class="intro">
-	<div class="wrap">
-		<h1>{{ page.title }}</h1>
-		<p>{{ page.subtitle }}</p>
+	<div class="wrap page-intro{% if page.featured_image %} page-intro--with-image{% endif %}">
+		{% if page.featured_image %}
+		<div class="page-intro__media">
+			<img src="{{ page.featured_image }}" alt="{{ page.title }}" class="page-intro__image">
+		</div>
+		{% endif %}
+		<div class="page-intro__copy">
+			<h1>{{ page.title }}</h1>
+			<p>{{ page.subtitle }}</p>
+		</div>
 	</div>
 </section>
 

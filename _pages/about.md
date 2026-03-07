@@ -19,7 +19,7 @@ Passionate about **#Hardware***, **#Coding*** & **#Anime**
 ##### Projects:
 
 ***Project I : Sensor based lights** <br>
-    [<span style="color: #249eda;">Project Page</span>]() (Coming soon),
+    [<span style="color: #249eda;">Project Page</span>](/sensor-based-light),
     <!-- [<span style="color: #249eda;">Project Page</span>](anticipating-next-active-object-egocentric.html), [<span style="color: #6cc644;">Paper</span>](https://arxiv.org/abs/2302.06358) -->
 
 
