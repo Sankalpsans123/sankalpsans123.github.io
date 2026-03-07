@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <header class="header">
-	<div class="header-image header-image--on" style="background-image: url('{{ page.featured_image }}');"></div>
+	<div class="header-image header-image--on" {% if page.header_image or page.featured_image %}style="background-image: url('{{ page.header_image | default: page.featured_image }}');"{% endif %}></div>
 	<div class="header-image"></div>
 
 	<div class="header-overlay"></div>

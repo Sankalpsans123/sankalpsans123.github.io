@@ -2,7 +2,7 @@
 title: Ciao
 subtitle: /tʃaʊ/
 description: High School Student. Hoobyist.
-featured_image: /img/sankalp.jpg
+header_image: /img/sankalp.jpg
 ---
 
 I'm Sankalp, a high-school student, interested in robotics everything. I have built some of my projects through self-learning and youtube. I will be adding them here.  
@@ -20,6 +20,7 @@ Passionate about **#Hardware***, **#Coding*** & **#Anime**
 
 ***Project I : Sensor based lights** <br>
     [<span style="color: #249eda;">Project Page</span>](/sensor-based-light),
+    [<span style="color: #249eda;">Code</span>](https://gist.github.com/Sankalpsans123/7fcc30a148d50471cd7b6823ea07b547),
     <!-- [<span style="color: #249eda;">Project Page</span>](anticipating-next-active-object-egocentric.html), [<span style="color: #6cc644;">Paper</span>](https://arxiv.org/abs/2302.06358) -->
 
 

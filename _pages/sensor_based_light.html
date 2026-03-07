@@ -3,8 +3,9 @@ layout: page
 title: Sensor Based Light
 subtitle: Personal Raspberry Pi automation project
 description: A personal home-automation project using Raspberry Pi and a PIR sensor to detect motion and switch room lights on or off automatically.
-featured_image: /img/sensor_lights/motion-sensor.png
 permalink: /sensor-based-light
+<!-- header_image: /img/sankalp.jpg -->
+header_image: /img/sensor_lights/motion-sensor.png
 ---
 
 <div style="display:grid; gap:2rem;">
@@ -90,6 +91,14 @@ permalink: /sensor-based-light
   </div>
 
   <div>
+    <h3>Code</h3>
+    <p>
+      The control logic for this project is available here:
+      <a href="https://gist.github.com/Sankalpsans123/7fcc30a148d50471cd7b6823ea07b547">Sensor Based Light Gist</a>
+    </p>
+  </div>
+
+  <div>
     <p style="font-size:0.95em; opacity:0.8;">
       Icon credit:
       <a href="https://www.flaticon.com/free-icons/sensor" title="sensor icons">Sensor icons created by bsd - Flaticon</a>
@@ -98,8 +107,10 @@ permalink: /sensor-based-light
 
   <div>
     <h3>Limitation & Future Work</h3>
-    <li>Turns the light off when another person enters with someone already in the room.</li>
-    <li>Need a memory system to track, if a person is already in the room to disable turning off.</li>
+    <ul>
+      <li>Turns the light off when another person enters with someone already in the room.</li>
+      <li>Needs a memory system to track whether a person is already inside the room before turning the light off.</li>
+    </ul>
   </div>
 </div>
 

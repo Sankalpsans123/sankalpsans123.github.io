@@ -27,23 +27,27 @@
 	display: grid;
 	gap: 1.5rem;
 	align-items: center;
+	max-width: 70rem !important;
 
 	@include mq(tabletp) {
-		grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+		grid-template-columns: minmax(220px, 320px) minmax(0, 45rem);
 	}
 }
 
 .page-intro__media {
 	order: 1;
+	justify-self: start;
 }
 
 .page-intro__copy {
 	order: 2;
+	max-width: 45rem;
 }
 
 .page-intro__image {
 	display: block;
 	width: 100%;
+	max-width: 320px;
 	border-radius: 12px;
 }
 
