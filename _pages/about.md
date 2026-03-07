@@ -23,7 +23,7 @@ Passionate about **#Hardware***, **#Coding*** & **#Anime**
     <img src="/img/sensor_lights/motion-sensor.png" alt="Sensor based light project" class="project-panel__image">
     <div class="project-panel__body">
       <h4>Sensor Based Light</h4>
-      <p>Raspberry Pi automation project using a PIR sensor to detect motion and switch room lights on or off automatically.</p>
+      <p class="project-panel__description">Raspberry Pi automation project using a PIR sensor to detect motion and switch room lights on or off automatically.</p>
       <div class="project-panel__links">
         <a href="/sensor-based-light" class="button button--light">Project Page</a>
         <a href="https://gist.github.com/Sankalpsans123/7fcc30a148d50471cd7b6823ea07b547" class="button button--light">Code</a>
@@ -35,7 +35,7 @@ Passionate about **#Hardware***, **#Coding*** & **#Anime**
     <img src="/img/plant_gpt/chip.png" alt="Plant GPT project" class="project-panel__image">
     <div class="project-panel__body">
       <h4>Plant GPT</h4>
-      <p>Raspberry Pi plant assistant that reads soil moisture and alerts the user when the plant needs watering.</p>
+      <p class="project-panel__description">Raspberry Pi plant assistant that reads soil moisture and alerts the user when the plant needs watering.</p>
       <div class="project-panel__links">
         <a href="/plant-gpt" class="button button--light">Project Page</a>
         <a href="https://gist.github.com/Sankalpsans123/7abfd9320ea857810e3093245427091f" class="button button--light">Code</a>
